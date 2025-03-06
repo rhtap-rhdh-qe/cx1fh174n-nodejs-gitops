@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: cx1fh174n-nodejs-gitops
+  description: This is GitOps manifest for cx1fh174n-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=cx1fh174n-nodejs
+    backstage.io/kubernetes-id: cx1fh174n-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: cx1fh174n-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:cx1fh174n-nodejs
